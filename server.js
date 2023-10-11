@@ -9,7 +9,7 @@ const app = express();
 app.get('/', (req, res) => {
     child_process.exec('fortune', (error, message) => {
         if(error === null){
-            res.send(message);
+            res.send(message + Date()); // Exercise 4
         }else{
             res.send('Error: ' + error)
         }
